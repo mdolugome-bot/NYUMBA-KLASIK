@@ -6,11 +6,8 @@
   <title>Nyumba Klasik - Admin</title>
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
-    // Force CMS to use GitHub backend
-    window.CMS_MANUAL_INIT = true;
-    CMS.init({
+    window.CMS_CONFIG = {
       backend: {
         name: 'github',
         repo: 'mdolugome-bot/NYUMBA-KLASIK',
@@ -28,18 +25,19 @@
               label: 'Main Settings',
               name: 'settings',
               fields: [
-                { name: 'title', label: 'Site Title', widget: 'string' },
-                { name: 'description', label: 'Meta Description', widget: 'text' },
-                { name: 'keywords', label: 'Meta Keywords', widget: 'string' },
-                { name: 'email', label: 'Email', widget: 'string' },
-                { name: 'phone', label: 'Phone', widget: 'string' },
-                { name: 'whatsapp', label: 'WhatsApp Number', widget: 'string' }
+                { label: 'Site Title', name: 'title', widget: 'string' },
+                { label: 'Meta Description', name: 'description', widget: 'text' },
+                { label: 'Meta Keywords', name: 'keywords', widget: 'string' },
+                { label: 'Email', name: 'email', widget: 'string' },
+                { label: 'Phone', name: 'phone', widget: 'string' },
+                { label: 'WhatsApp Number', name: 'whatsapp', widget: 'string' }
               ]
             }
           ]
         }
       ]
-    });
+    };
   </script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </body>
 </html>
