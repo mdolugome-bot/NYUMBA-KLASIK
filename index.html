@@ -1,0 +1,2334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYUMBA KLASIK | Premium Home & Lifestyle Store — Dar es Salaam</title>
+<meta name="description" content="Tanzania's premier home and lifestyle brand. Shop modern curtains, cookware, duvets, and sneakers. Delivery across Dar es Salaam. Order via WhatsApp.">
+<meta name="keywords" content="curtains Tanzania, cookware Dar es Salaam, duvets Tanzania, sneakers Tanzania, home decor Tanzania, Nyumba Klasik">
+<meta property="og:title" content="NYUMBA KLASIK | Premium Home & Lifestyle">
+<meta property="og:description" content="Modern home and lifestyle products for Tanzanian families and professionals.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-pale: #F5EDD5;
+  --obsidian: #0A0A0A;
+  --charcoal: #1A1A1A;
+  --graphite: #2C2C2C;
+  --warm-white: #FAFAF7;
+  --off-white: #F0EFEA;
+  --text-mid: #6B6B6B;
+  --text-light: #9A9A9A;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', sans-serif;
+  --whatsapp: #25D366;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--warm-white);
+  color: var(--obsidian);
+  overflow-x: hidden;
+}
+
+/* ─── ANIMATIONS ─────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes goldShimmer {
+  0%, 100% { background-position: -200% center; }
+  50% { background-position: 200% center; }
+}
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── TOPBAR ─────────────────────────────── */
+.topbar {
+  background: var(--obsidian);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.topbar span { color: var(--gold); }
+
+/* ─── NAVBAR ──────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(250,250,247,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  transition: all 0.3s;
+}
+nav.scrolled {
+  background: rgba(10,10,10,0.97);
+}
+nav.scrolled .nav-links a,
+nav.scrolled .nav-icons i {
+  color: var(--warm-white) !important;
+}
+nav.scrolled .logo-text { color: var(--warm-white); }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.logo-mark svg { width: 100%; height: 100%; }
+
+.logo-text {
+  font-family: var(--serif);
+  color: var(--obsidian);
+  line-height: 1;
+  transition: color 0.3s;
+}
+.logo-text .brand-name {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  display: block;
+}
+.logo-text .brand-sub {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--obsidian);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a:hover { color: var(--gold); }
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.nav-icons i {
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--obsidian);
+  transition: color 0.3s;
+}
+.nav-icons i:hover { color: var(--gold); }
+
+.cart-count {
+  background: var(--gold);
+  color: var(--obsidian);
+  font-size: 9px;
+  font-weight: 700;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-left: -8px; margin-top: -12px;
+}
+
+.btn-whatsapp-nav {
+  background: var(--whatsapp);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.3s;
+}
+.btn-whatsapp-nav:hover {
+  background: #1ebe5b;
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--obsidian);
+  transition: all 0.3s;
+}
+
+/* ─── HERO ────────────────────────────────── */
+.hero {
+  min-height: 95vh;
+  background: var(--obsidian);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+  background-size: 30px 30px;
+}
+
+.hero-glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 70vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 8%;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero-left { animation: fadeUp 1s ease 0.2s both; }
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-weight: 500;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300;
+  color: var(--warm-white);
+  line-height: 1.1;
+  margin-bottom: 28px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: rgba(250,250,247,0.65);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 44px;
+  font-weight: 300;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--obsidian);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: var(--sans);
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(201,168,76,0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--warm-white);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 15px 36px;
+  border: 1px solid rgba(250,250,247,0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: var(--sans);
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.stat { text-align: left; }
+.stat-num {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  color: var(--gold-light);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 11px;
+  color: rgba(250,250,247,0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.hero-right {
+  position: relative;
+  animation: fadeIn 1.2s ease 0.5s both;
+}
+
+.hero-product-showcase {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.showcase-card {
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.showcase-card:hover { transform: translateY(-6px); }
+
+.showcase-card.tall { grid-row: span 2; }
+
+.showcase-img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(250,250,247,0.6);
+  text-align: center;
+  padding: 20px;
+  min-height: 200px;
+}
+
+.card-s1 { background: linear-gradient(135deg, #1a1a1a 0%, #2d2416 100%); }
+.card-s2 { background: linear-gradient(135deg, #141a14 0%, #1a2d1a 100%); }
+.card-s3 { background: linear-gradient(135deg, #1a1420 0%, #2a1a2d 100%); }
+.card-s4 { background: linear-gradient(135deg, #1a1614 0%, #2d1e14 100%); }
+
+.showcase-card-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(10,10,10,0.75);
+  backdrop-filter: blur(8px);
+  padding: 10px 14px;
+  border-left: 2px solid var(--gold);
+}
+.showcase-card-label .cat { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
+.showcase-card-label .name { font-family: var(--serif); font-size: 15px; color: white; font-weight: 400; margin-top: 2px; }
+
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+  opacity: 0.5;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ─── MARQUEE ─────────────────────────────── */
+.marquee-section {
+  background: var(--gold);
+  padding: 14px 0;
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 20s linear infinite;
+}
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  white-space: nowrap;
+  padding-right: 60px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--obsidian);
+}
+.marquee-dot {
+  width: 5px; height: 5px;
+  background: var(--obsidian);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+/* ─── CATEGORIES ──────────────────────────── */
+.section { padding: 100px 8%; }
+.section-sm { padding: 60px 8%; }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.section-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: var(--obsidian);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.section-sub {
+  font-size: 15px;
+  color: var(--text-mid);
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  background: var(--obsidian);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+  aspect-ratio: 3/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  border: 1px solid rgba(201,168,76,0.1);
+}
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+  border-color: rgba(201,168,76,0.3);
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.3) 50%, transparent 100%);
+  z-index: 1;
+}
+
+.cat-bg-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90px;
+  opacity: 0.08;
+  z-index: 0;
+  transition: opacity 0.4s, transform 0.4s;
+}
+.category-card:hover .cat-bg-icon {
+  opacity: 0.15;
+  transform: scale(1.1);
+}
+
+.cat-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cat-icon-wrap {
+  width: 44px; height: 44px;
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  margin-bottom: 14px;
+  transition: background 0.3s;
+}
+.category-card:hover .cat-icon-wrap {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.cat-name {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--warm-white);
+  margin-bottom: 4px;
+}
+.cat-count {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+.cat-arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  color: var(--gold);
+  font-size: 18px;
+  transform: translateX(-5px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.category-card:hover .cat-arrow {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ─── PRODUCTS ────────────────────────────── */
+.products-section { background: var(--off-white); }
+
+.products-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.products-tab {
+  background: none;
+  border: none;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-mid);
+  padding: 14px 28px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.3s;
+}
+.products-tab.active {
+  color: var(--obsidian);
+  border-bottom-color: var(--gold);
+}
+.products-tab:hover { color: var(--obsidian); }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--warm-white);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.4s, transform 0.4s;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.product-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+}
+
+.product-img-wrap {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--off-white);
+  overflow: hidden;
+}
+
+.product-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 48px;
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 2px;
+  z-index: 2;
+}
+.badge-sale { background: #C0392B; color: white; }
+.badge-new { background: var(--obsidian); color: var(--gold); }
+.badge-hot { background: var(--gold); color: var(--obsidian); }
+
+.product-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  padding: 14px;
+  background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 100%);
+  display: flex;
+  gap: 8px;
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+  z-index: 3;
+}
+.product-card:hover .product-actions { transform: translateY(0); }
+
+.btn-wa-small {
+  flex: 1;
+  background: var(--whatsapp);
+  color: white;
+  border: none;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-family: var(--sans);
+  transition: background 0.3s;
+}
+.btn-wa-small:hover { background: #1ebe5b; }
+
+.btn-cart-small {
+  background: var(--gold);
+  color: var(--obsidian);
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.btn-cart-small:hover { background: var(--gold-light); }
+
+.product-info {
+  padding: 18px 16px;
+}
+.product-cat {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.product-name {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--obsidian);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.stars { color: var(--gold); font-size: 12px; }
+.rating-count { font-size: 11px; color: var(--text-light); }
+
+.product-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.price-current {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--obsidian);
+}
+.price-old {
+  font-size: 13px;
+  color: var(--text-light);
+  text-decoration: line-through;
+}
+.price-discount {
+  font-size: 11px;
+  font-weight: 600;
+  color: #C0392B;
+}
+
+/* ─── PROMO BANNER ────────────────────────── */
+.promo-section {
+  background: var(--obsidian);
+  padding: 80px 8%;
+  position: relative;
+  overflow: hidden;
+}
+.promo-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(201,168,76,0.03) 0,
+    rgba(201,168,76,0.03) 1px,
+    transparent 0,
+    transparent 12px
+  );
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.promo-card {
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 4px;
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.promo-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+.promo-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+}
+
+.promo-tag {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.promo-title {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  color: var(--warm-white);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.promo-title strong { color: var(--gold-light); font-weight: 400; }
+.promo-desc {
+  font-size: 14px;
+  color: rgba(250,250,247,0.55);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+.promo-discount-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--obsidian);
+  font-size: 28px;
+  font-family: var(--serif);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+.btn-promo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: gap 0.3s;
+}
+.btn-promo:hover { gap: 16px; }
+
+/* ─── TESTIMONIALS ────────────────────────── */
+.testimonials-section { background: var(--warm-white); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--warm-white);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 4px;
+  padding: 32px 28px;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.testimonial-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: var(--serif);
+  font-size: 80px;
+  color: var(--gold);
+  opacity: 0.15;
+  line-height: 1;
+}
+
+.testimonial-stars { color: var(--gold); font-size: 14px; margin-bottom: 16px; }
+.testimonial-text {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--graphite);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.author-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--serif);
+  color: white;
+  flex-shrink: 0;
+}
+.av1 { background: linear-gradient(135deg, #2C3E50, #3498db); }
+.av2 { background: linear-gradient(135deg, #6B2D6B, #C0392B); }
+.av3 { background: linear-gradient(135deg, #145A32, #1E8449); }
+.av4 { background: linear-gradient(135deg, #7D3C98, #2471A3); }
+.av5 { background: linear-gradient(135deg, #784212, #D68910); }
+.av6 { background: linear-gradient(135deg, #1A5276, #148F77); }
+
+.author-name {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--obsidian);
+}
+.author-loc {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+/* ─── WHY US ──────────────────────────────── */
+.why-section { background: var(--obsidian); }
+.why-section .section-title { color: var(--warm-white); }
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 40px 20px;
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 4px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.feature-card:hover {
+  border-color: rgba(201,168,76,0.35);
+  transform: translateY(-6px);
+}
+.feature-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  display: block;
+}
+.feature-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  color: var(--warm-white);
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+.feature-desc {
+  font-size: 13px;
+  color: rgba(250,250,247,0.5);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ─── AI CHATBOT ──────────────────────────── */
+.chatbot-float {
+  position: fixed;
+  bottom: 100px;
+  right: 28px;
+  z-index: 999;
+}
+
+.chat-bubble {
+  width: 54px; height: 54px;
+  background: var(--obsidian);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  animation: pulse 2s ease-in-out infinite;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.chat-bubble:hover { transform: scale(1.1); }
+
+.chat-window {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 340px;
+  background: var(--warm-white);
+  border-radius: 12px;
+  border: 1px solid rgba(201,168,76,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  overflow: hidden;
+  display: none;
+  transform-origin: bottom right;
+  animation: fadeUp 0.3s ease;
+}
+.chat-window.open { display: block; }
+
+.chat-header {
+  background: var(--obsidian);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.chat-avatar {
+  width: 36px; height: 36px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+.chat-header-info .chat-name { font-size: 14px; font-weight: 600; color: white; }
+.chat-header-info .chat-status {
+  font-size: 11px; color: var(--whatsapp);
+  display: flex; align-items: center; gap: 4px;
+}
+.status-dot {
+  width: 6px; height: 6px;
+  background: var(--whatsapp);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.chat-messages {
+  padding: 16px;
+  height: 240px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f8f7f2;
+}
+
+.msg {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.msg.ai {
+  background: white;
+  color: var(--obsidian);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.msg.user {
+  background: var(--obsidian);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.msg.typing { background: white; color: var(--text-light); font-style: italic; }
+
+.chat-input-row {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+.chat-input {
+  flex: 1;
+  border: none;
+  padding: 14px 16px;
+  font-size: 13px;
+  font-family: var(--sans);
+  background: white;
+  outline: none;
+  color: var(--obsidian);
+}
+.chat-send {
+  background: var(--gold);
+  border: none;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--obsidian);
+  transition: background 0.3s;
+}
+.chat-send:hover { background: var(--gold-light); }
+
+/* ─── WHATSAPP FLOAT ──────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.wa-btn {
+  width: 58px; height: 58px;
+  background: var(--whatsapp);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+  text-decoration: none;
+  font-size: 26px;
+  animation: pulse 2s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+.wa-btn:hover { transform: scale(1.1); }
+.wa-tooltip {
+  background: var(--obsidian);
+  color: white;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+
+/* ─── NEWSLETTER ──────────────────────────── */
+.newsletter-section {
+  background: var(--gold);
+  padding: 80px 8%;
+}
+.newsletter-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.newsletter-title {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--obsidian);
+  margin-bottom: 12px;
+}
+.newsletter-sub {
+  font-size: 14px;
+  color: rgba(10,10,10,0.65);
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.newsletter-input {
+  flex: 1;
+  border: none;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-family: var(--sans);
+  outline: none;
+  background: rgba(10,10,10,0.08);
+  color: var(--obsidian);
+}
+.newsletter-input::placeholder { color: rgba(10,10,10,0.4); }
+.newsletter-btn {
+  background: var(--obsidian);
+  color: var(--gold);
+  border: none;
+  padding: 16px 28px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.newsletter-btn:hover { background: var(--graphite); }
+
+/* ─── FOOTER ──────────────────────────────── */
+footer {
+  background: var(--obsidian);
+  padding: 80px 8% 40px;
+  color: rgba(250,250,247,0.6);
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+
+.footer-brand .logo-text .brand-name { color: var(--warm-white); }
+
+.footer-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(250,250,247,0.45);
+  margin-top: 20px;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+.social-icon {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.social-icon:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--obsidian);
+}
+
+.footer-col h4 {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--warm-white);
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a {
+  color: rgba(250,250,247,0.45);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s;
+  font-weight: 300;
+}
+.footer-links a:hover { color: var(--gold); }
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 300;
+}
+.footer-contact-item i { color: var(--gold); margin-top: 2px; font-size: 14px; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(201,168,76,0.1);
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(250,250,247,0.3);
+}
+.footer-bottom .gold { color: var(--gold); }
+
+.payment-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.payment-icon {
+  background: rgba(255,255,255,0.07);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(250,250,247,0.5);
+  letter-spacing: 0.05em;
+}
+
+/* ─── MOBILE MENU ─────────────────────────── */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--obsidian);
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  padding: 80px 40px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu-close {
+  position: absolute;
+  top: 20px; right: 24px;
+  font-size: 28px;
+  color: var(--warm-white);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.mobile-nav-links { list-style: none; margin-top: 24px; }
+.mobile-nav-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+.mobile-nav-links a {
+  display: block;
+  padding: 18px 0;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--warm-white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.mobile-nav-links a:hover { color: var(--gold); }
+.mobile-wa-btn {
+  margin-top: 40px;
+  background: var(--whatsapp);
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: var(--sans);
+}
+
+/* ─── INSTAGRAM SECTION ───────────────────── */
+.instagram-section { background: var(--off-white); padding-bottom: 100px; }
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+.insta-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.insta-placeholder {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  transition: transform 0.4s;
+}
+.insta-item:hover .insta-placeholder { transform: scale(1.05); }
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.6);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: white;
+  font-size: 24px;
+}
+.insta-item:hover .insta-overlay { opacity: 1; }
+
+.insta-c1 { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+.insta-c2 { background: linear-gradient(135deg, #1a2e1a, #16312e); }
+.insta-c3 { background: linear-gradient(135deg, #2e1a1a, #312016); }
+.insta-c4 { background: linear-gradient(135deg, #1a1a1a, #2a2016); }
+.insta-c5 { background: linear-gradient(135deg, #1a2028, #162130); }
+.insta-c6 { background: linear-gradient(135deg, #2a1a28, #301624); }
+
+/* ─── RESPONSIVE ──────────────────────────── */
+@media (max-width: 1100px) {
+  .categories-grid { grid-template-columns: repeat(3, 1fr); }
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; gap: 40px; padding-top: 60px; }
+  .hero-product-showcase { display: none; }
+  .promo-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .nav-links, .btn-whatsapp-nav { display: none; }
+  .hamburger { display: flex; }
+  .insta-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 60px 5%; }
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .newsletter-form { flex-direction: column; }
+  .products-tabs { overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <ul class="mobile-nav-links">
+    <li><a href="#" onclick="toggleMenu()">Home</a></li>
+    <li><a href="#" onclick="toggleMenu()">Shop</a></li>
+    <li><a href="#" onclick="toggleMenu()">Categories</a></li>
+    <li><a href="#" onclick="toggleMenu()">About</a></li>
+    <li><a href="#" onclick="toggleMenu()">Blog</a></li>
+    <li><a href="#" onclick="toggleMenu()">Contact</a></li>
+  </ul>
+  <button class="mobile-wa-btn" onclick="openWhatsApp()">📱 Order on WhatsApp</button>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  🚚 Free delivery within Dar es Salaam on orders above <span>TZS 150,000</span> &nbsp;|&nbsp; 📱 WhatsApp: +255 700 000 000 &nbsp;|&nbsp; ✨ New arrivals every week
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="42" height="42" rx="2" fill="#0A0A0A"/>
+        <path d="M8 32V10L21 21L34 10V32" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 21H34" stroke="#C9A84C" stroke-width="0.75" stroke-dasharray="2 3" opacity="0.5"/>
+        <circle cx="21" cy="21" r="3" fill="#C9A84C" opacity="0.8"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="brand-name">NYUMBA KLASIK</span>
+      <span class="brand-sub">Premium Home & Lifestyle · Dar es Salaam</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">Curtains</a></li>
+    <li><a href="#">Kitchen</a></li>
+    <li><a href="#">Bedding</a></li>
+    <li><a href="#">Sneakers</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+
+  <div class="nav-icons">
+    <i>🔍</i>
+    <i>❤️</i>
+    <div style="display:flex;align-items:flex-start;">
+      <i>🛒</i>
+      <div class="cart-count">3</div>
+    </div>
+    <button class="btn-whatsapp-nav" onclick="openWhatsApp()">
+      📱 Order Now
+    </button>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Dar es Salaam's Premier Lifestyle Brand</div>
+      <h1 class="hero-title">
+        Elevate Your<br>
+        <em>Home & Life</em><br>
+        With Style
+      </h1>
+      <p class="hero-desc">
+        From premium curtains to modern cookware, luxury duvets, and stylish sneakers — NYUMBA KLASIK brings the finest home and lifestyle products to Tanzanian families and professionals.
+      </p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">Shop Collection</a>
+        <a href="#" class="btn-outline">Watch Our Story</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">5,200+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Products</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Same Day</div>
+          <div class="stat-label">Delivery</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-product-showcase">
+        <div class="showcase-card tall card-s1">
+          <div class="showcase-placeholder">
+            <div class="card-icon">🪟</div>
+            <div style="font-size:12px;letter-spacing:0.1em;color:rgba(201,168,76,0.8)">LUXURY CURTAINS</div>
+          </div>
+          <div class="showcase-card-label">
+            <div class="cat">New Arrival</div>
+            <div class="name">Velvet Drape Collection</div>
+          </div>
+        </div>
+        <div class="showcase-card card-s2">
+          <div class="showcase-placeholder" style="min-height:160px;">
+            <div style="font-size:40px;">🍳</div>
+            <div style="font-size:11px;letter-spacing:0.1em;color:rgba(201,168,76,0.8)">COOKWARE</div>
+          </div>
+          <div class="showcase-card-label">
+            <div class="cat">Best Seller</div>
+            <div class="name">Pro Kitchen Set</div>
+          </div>
+        </div>
+        <div class="showcase-card card-s3">
+          <div class="showcase-placeholder" style="min-height:160px;">
+            <div style="font-size:40px;">🛏️</div>
+            <div style="font-size:11px;letter-spacing:0.1em;color:rgba(201,168,76,0.8)">BEDDING</div>
+          </div>
+          <div class="showcase-card-label">
+            <div class="cat">Trending</div>
+            <div class="name">Cloud Duvet Set</div>
+          </div>
+        </div>
+        <div class="showcase-card card-s4" style="grid-column: 2; grid-row: 3;">
+          <div class="showcase-placeholder" style="min-height:140px;">
+            <div style="font-size:40px;">👟</div>
+            <div style="font-size:11px;letter-spacing:0.1em;color:rgba(201,168,76,0.8)">SNEAKERS</div>
+          </div>
+          <div class="showcase-card-label">
+            <div class="cat">Hot 🔥</div>
+            <div class="name">Performance Series</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item">
+      Premium Quality <div class="marquee-dot"></div>
+      Free Delivery Dar es Salaam <div class="marquee-dot"></div>
+      M-Pesa & Airtel Money <div class="marquee-dot"></div>
+      Same-Day Orders <div class="marquee-dot"></div>
+      WhatsApp Orders <div class="marquee-dot"></div>
+      5,200+ Customers <div class="marquee-dot"></div>
+      Curtains · Cookware · Bedding · Sneakers <div class="marquee-dot"></div>
+    </div>
+    <div class="marquee-item">
+      Premium Quality <div class="marquee-dot"></div>
+      Free Delivery Dar es Salaam <div class="marquee-dot"></div>
+      M-Pesa & Airtel Money <div class="marquee-dot"></div>
+      Same-Day Orders <div class="marquee-dot"></div>
+      WhatsApp Orders <div class="marquee-dot"></div>
+      5,200+ Customers <div class="marquee-dot"></div>
+      Curtains · Cookware · Bedding · Sneakers <div class="marquee-dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Shop by Category</div>
+    <h2 class="section-title">Curated for the <em>Modern</em> Tanzanian Home</h2>
+    <p class="section-sub">From window elegance to kitchen mastery — every product chosen for quality, beauty, and value.</p>
+  </div>
+  <div class="categories-grid">
+    <div class="category-card reveal" style="transition-delay:0.05s">
+      <div class="cat-bg-icon">🪟</div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap">🪟</div>
+        <div class="cat-name">Home Curtains</div>
+        <div class="cat-count">48 products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <div class="category-card reveal" style="transition-delay:0.1s">
+      <div class="cat-bg-icon">🏢</div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap">🏢</div>
+        <div class="cat-name">Office Curtains</div>
+        <div class="cat-count">32 products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <div class="category-card reveal" style="transition-delay:0.15s">
+      <div class="cat-bg-icon">🍳</div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap">🍳</div>
+        <div class="cat-name">Cookware & Kitchen</div>
+        <div class="cat-count">95 products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <div class="category-card reveal" style="transition-delay:0.2s">
+      <div class="cat-bg-icon">🛏️</div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap">🛏️</div>
+        <div class="cat-name">Duvets & Bedding</div>
+        <div class="cat-count">67 products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <div class="category-card reveal" style="transition-delay:0.25s">
+      <div class="cat-bg-icon">👟</div>
+      <div class="cat-content">
+        <div class="cat-icon-wrap">👟</div>
+        <div class="cat-name">Sneakers & Gym Shoes</div>
+        <div class="cat-count">120 products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products-section">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Our Collection</div>
+    <h2 class="section-title">Most <em>Loved</em> Products</h2>
+    <p class="section-sub">Hand-selected by Tanzanians, for Tanzanians. Every item quality-checked before it reaches your door.</p>
+  </div>
+
+  <div class="products-tabs">
+    <button class="products-tab active" onclick="filterProducts('all', this)">All Products</button>
+    <button class="products-tab" onclick="filterProducts('curtains', this)">Curtains</button>
+    <button class="products-tab" onclick="filterProducts('kitchen', this)">Kitchen</button>
+    <button class="products-tab" onclick="filterProducts('bedding', this)">Bedding</button>
+    <button class="products-tab" onclick="filterProducts('sneakers', this)">Sneakers</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+
+    <!-- Product 1 -->
+    <div class="product-card reveal" style="transition-delay:0.05s">
+      <div class="product-img-wrap">
+        <div class="product-placeholder" style="background:linear-gradient(135deg,#1a1a2a,#2a2010);">
+          <div style="font-size:64px;">🪟</div>
+          <div style="font-size:11px;color:rgba(201,168,76,0.7);letter-spacing:0.1em;">CURTAINS</div>
+        </div>
+        <span class="product-badge badge-new">New</span>
+        <div class="product-actions">
+          <button class="btn-wa-small" onclick="openWhatsApp()">📱 WhatsApp Order</button>
+          <button class="btn-cart-small" title="Add to Cart">🛒</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Home Curtains</div>
+        <div class="product-name">Royal Velvet Blackout Curtains — Cream & Gold</div>
+        <div class="product-rating">
+          <div class="stars">★★★★★</div>
+          <span class="rating-count">(142)</span>
+        </div>
+        <div class="product-pricing">
+          <span class="price-current">TZS 95,000</span>
+          <span class="price-old">TZS 130,000</span>
+          <span class="price-discount">-27%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card reveal" style="transition-delay:0.1s">
+      <div class="product-img-wrap">
+        <div class="product-placeholder" style="background:linear-gradient(135deg,#0d1a0d,#1a2d0d);">
+          <div style="font-size:64px;">🍳</div>
+          <div style="font-size:11px;color:rgba(201,168,76,0.7);letter-spacing:0.1em;">COOKWARE</div>
+        </div>
+        <span class="product-badge badge-hot">Hot 🔥</span>
+        <div class="product-actions">
+          <button class="btn-wa-small" onclick="openWhatsApp()">📱 WhatsApp Order</button>
+          <button class="btn-cart-small" title="Add to Cart">🛒</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Cookware</div>
+        <div class="product-name">Non-Stick Premium Cookware Set — 12 Pieces</div>
+        <div class="product-rating">
+          <div class="stars">★★★★★</div>
+          <span class="rating-count">(289)</span>
+        </div>
+        <div class="product-pricing">
+          <span class="price-current">TZS 185,000</span>
+          <span class="price-old">TZS 240,000</span>
+          <span class="price-discount">-23%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card reveal" style="transition-delay:0.15s">
+      <div class="product-img-wrap">
+        <div class="product-placeholder" style="background:linear-gradient(135deg,#1a0d1a,#2d0d2a);">
+          <div style="font-size:64px;">🛏️</div>
+          <div style="font-size:11px;color:rgba(201,168,76,0.7);letter-spacing:0.1em;">BEDDING</div>
+        </div>
+        <span class="product-badge badge-sale">Sale</span>
+        <div class="product-actions">
+          <button class="btn-wa-small" onclick="openWhatsApp()">📱 WhatsApp Order</button>
+          <button class="btn-cart-small" title="Add to Cart">🛒</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Duvets & Bedding</div>
+        <div class="product-name">Cloud Comfort Duvet Set — King Size, 300 GSM</div>
+        <div class="product-rating">
+          <div class="stars">★★★★★</div>
+          <span class="rating-count">(198)</span>
+        </div>
+        <div class="product-pricing">
+          <span class="price-current">TZS 145,000</span>
+          <span class="price-old">TZS 190,000</span>
+          <span class="price-discount">-24%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card reveal" style="transition-delay:0.2s">
+      <div class="product-img-wrap">
+        <div class="product-placeholder" style="background:linear-gradient(135deg,#1a1000,#2d2000);">
+          <div style="font-size:64px;">👟</div>
+          <div style="font-size:11px;color:rgba(201,168,76,0.7);letter-spacing:0.1em;">SNEAKERS</div>
+        </div>
+        <span class="product-badge badge-new">New</span>
+        <div class="product-actions">
+          <button class="btn-wa-small" onclick="openWhatsApp()">📱 WhatsApp Order</button>
+          <button class="btn-cart-small" title="Add to Cart">🛒</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Sneakers</div>
+        <div class="product-name">Urban Pro Running Shoes — Air Cushion Sole</div>
+        <div class="product-rating">
+          <div class="stars">★★★★☆</div>
+          <span class="rating-count">(87)</span>
+        </div>
+        <div class="product-pricing">
+          <span class="price-current">TZS 110,000</span>
+          <span class="price-old">TZS 150,000</span>
+          <span class="price-discount">-27%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card reveal" style="transition-delay:0.05s">
+      <div class="product-img-wrap">
+        <div class="product-placeholder" style="background:linear-gradient(135deg,#0a1520,#102030);">
+          <div style="font-size:64px;">🪟</div>
+          <div style="font-size:11px;color:rgba(201,168,76,0.7);letter-spacing:0.1em;">OFFICE</div>
+        </div>
+        <span class="product-badge badge-hot">Best Seller</span>
+        <div class="product-actions">
+          <button class="btn-wa-small" onclick="openWhatsApp()">📱 WhatsApp Order</button>
+          <button class="btn-cart-small" title="Add to Cart">🛒</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Office Curtains</div>
+        <div class="product-name">Executive Sheer Panel Curtains — Grey & Silver</div>
+        <div class="product-rating">
+          <div class="stars">★★★★★</div>
+          <span class="rating-count">(64)</span>
+        </div>
+        <div class="product-pricing">
+          <span class="price-current">TZS 75,000</span>
+          <span class="price-old">TZS 100,000</span>
+          <span class="price-discount">-25%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card reveal" style="transition-delay:0.1s">
+      <div class="product-img-wrap">
+        <div class="product-placeholder" style="background:linear-gradient(135deg,#1a0a0a,#2d1010);">
+          <div style="font-size:64px;">🥄</div>
+          <div style="font-size:11px;color:rgba(201,168,76,0.7);letter-spacing:0.1em;">UTENSILS</div>
+        </div>
+        <span class="product-badge badge-new">New</span>
+        <div class="product-actions">
+          <button class="btn-wa-small" onclick="openWhatsApp()">📱 WhatsApp Order</button>
+          <button class="btn-cart-small" title="Add to Cart">🛒</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Kitchen Utensils</div>
+        <div class="product-name">Stainless Steel Utensils Gift Set — 20 Pieces</div>
+        <div class="product-rating">
+          <div class="stars">★★★★★</div>
+          <span class="rating-count">(155)</span>
+        </div>
+        <div class="product-pricing">
+          <span class="price-current">TZS 55,000</span>
+          <span class="price-old">TZS 75,000</span>
+          <span class="price-discount">-27%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card reveal" style="transition-delay:0.15s">
+      <div class="product-img-wrap">
+        <div class="product-placeholder" style="background:linear-gradient(135deg,#0d1a15,#102d20);">
+          <div style="font-size:64px;">🛏️</div>
+          <div style="font-size:11px;color:rgba(201,168,76,0.7);letter-spacing:0.1em;">BEDDING</div>
+        </div>
+        <span class="product-badge badge-sale">Sale</span>
+        <div class="product-actions">
+          <button class="btn-wa-small" onclick="openWhatsApp()">📱 WhatsApp Order</button>
+          <button class="btn-cart-small" title="Add to Cart">🛒</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Comforters</div>
+        <div class="product-name">Silk Blend Comforter — Queen Size, Floral Print</div>
+        <div class="product-rating">
+          <div class="stars">★★★★★</div>
+          <span class="rating-count">(92)</span>
+        </div>
+        <div class="product-pricing">
+          <span class="price-current">TZS 120,000</span>
+          <span class="price-old">TZS 165,000</span>
+          <span class="price-discount">-27%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card reveal" style="transition-delay:0.2s">
+      <div class="product-img-wrap">
+        <div class="product-placeholder" style="background:linear-gradient(135deg,#1a1a0a,#2d2a10);">
+          <div style="font-size:64px;">👟</div>
+          <div style="font-size:11px;color:rgba(201,168,76,0.7);letter-spacing:0.1em;">GYM SHOES</div>
+        </div>
+        <span class="product-badge badge-hot">Trending</span>
+        <div class="product-actions">
+          <button class="btn-wa-small" onclick="openWhatsApp()">📱 WhatsApp Order</button>
+          <button class="btn-cart-small" title="Add to Cart">🛒</button>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">Gym Shoes</div>
+        <div class="product-name">FlexFit Training Shoes — Women's Edition</div>
+        <div class="product-rating">
+          <div class="stars">★★★★★</div>
+          <span class="rating-count">(211)</span>
+        </div>
+        <div class="product-pricing">
+          <span class="price-current">TZS 88,000</span>
+          <span class="price-old">TZS 120,000</span>
+          <span class="price-discount">-27%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:48px;">
+    <a href="#" class="btn-primary" style="font-size:12px;">View All Products →</a>
+  </div>
+</section>
+
+<!-- PROMO BANNERS -->
+<section class="promo-section">
+  <div class="promo-grid">
+    <div class="promo-card reveal">
+      <div class="promo-tag">⚡ Limited Time Offer</div>
+      <div class="promo-discount-badge">27% OFF</div>
+      <h3 class="promo-title">Weekend <strong>Curtain Sale</strong></h3>
+      <p class="promo-desc">Transform your home with our premium curtain collection. Both home and office styles included. Order before Sunday midnight.</p>
+      <button class="btn-promo" onclick="openWhatsApp()">Order Now via WhatsApp →</button>
+    </div>
+    <div class="promo-card reveal" style="transition-delay:0.1s">
+      <div class="promo-tag">🎁 Bundle Deal</div>
+      <div class="promo-discount-badge">Bundle & Save</div>
+      <h3 class="promo-title">Kitchen <strong>Complete Set</strong></h3>
+      <p class="promo-desc">Get a full cookware set + 20-piece utensils bundle at an exclusive Nyumba Klasik price. Free delivery in Dar es Salaam.</p>
+      <button class="btn-promo" onclick="openWhatsApp()">Get the Bundle →</button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-section">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Why Nyumba Klasik</div>
+    <h2 class="section-title" style="color:var(--warm-white);">The <em>Difference</em> You Feel</h2>
+    <p class="section-sub" style="color:rgba(250,250,247,0.5);">We don't just sell products — we deliver trust, quality, and a premium experience every single time.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal" style="transition-delay:0.05s">
+      <span class="feature-icon">🚚</span>
+      <div class="feature-title">Same-Day Delivery</div>
+      <p class="feature-desc">Order before 2 PM and receive your products the same day within Dar es Salaam. Fast, reliable, and tracked.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.1s">
+      <span class="feature-icon">✅</span>
+      <div class="feature-title">Quality Guaranteed</div>
+      <p class="feature-desc">Every product goes through quality checks. Not satisfied? Full refund or free replacement. No questions asked.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.15s">
+      <span class="feature-icon">💳</span>
+      <div class="feature-title">Easy Mobile Payments</div>
+      <p class="feature-desc">M-Pesa, Airtel Money, Tigo Pesa, card, or cash on delivery. Pay your way, safely and conveniently.</p>
+    </div>
+    <div class="feature-card reveal" style="transition-delay:0.2s">
+      <span class="feature-icon">📱</span>
+      <div class="feature-title">WhatsApp Support</div>
+      <p class="feature-desc">Order, ask questions, or get advice via WhatsApp. Our team responds within minutes — in English or Swahili.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Customer Reviews</div>
+    <h2 class="section-title">What Our <em>Customers</em> Say</h2>
+    <p class="section-sub">Real reviews from real Tanzanians who've transformed their homes with Nyumba Klasik.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Nilinunua curtains kutoka Nyumba Klasik na zilikuwa bora sana. Ubora ni wa kweli, na delivery ilikuwa haraka. Nitaendelea kununua tena!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar av1">AM</div>
+        <div>
+          <div class="author-name">Amina Mohamed</div>
+          <div class="author-loc">📍 Kinondoni, Dar es Salaam</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal" style="transition-delay:0.08s">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"The cookware set is absolutely premium quality. Worth every shilling. My kitchen looks like a professional cooking studio now!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar av2">JM</div>
+        <div>
+          <div class="author-name">James Mkwawa</div>
+          <div class="author-loc">📍 Msasani, Dar es Salaam</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal" style="transition-delay:0.16s">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Sneakers zangu zimefika haraka sana na zinafaa vizuri. Bei ni nzuri ukilinganisha na maduka mengine. Nyumba Klasik ni reliable!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar av3">FK</div>
+        <div>
+          <div class="author-name">Fatuma Kijani</div>
+          <div class="author-loc">📍 Mbezi Beach, Dar es Salaam</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal" style="transition-delay:0.05s">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Ordered office curtains for our company. They look stunning and professional. My boss loved them! Great brand with excellent service."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar av4">DK</div>
+        <div>
+          <div class="author-name">David Kimaro</div>
+          <div class="author-loc">📍 Posta, Dar es Salaam</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal" style="transition-delay:0.1s">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Duvet set ni laini na ya starehe sana. Familia yangu analala vizuri zaidi. Bei ni fair na delivery ilikuwa same day. Asante Nyumba Klasik!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar av5">RN</div>
+        <div>
+          <div class="author-name">Rose Ngowi</div>
+          <div class="author-loc">📍 Temeke, Dar es Salaam</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal" style="transition-delay:0.15s">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Best online shopping experience in Tanzania. WhatsApp ordering is so convenient, and their AI agent is super helpful and responds fast!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar av6">PM</div>
+        <div>
+          <div class="author-name">Peter Massawe</div>
+          <div class="author-loc">📍 Kariakoo, Dar es Salaam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM GRID -->
+<section class="section instagram-section">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">@nyumaklasik</div>
+    <h2 class="section-title">Follow Our <em>Daily</em> Inspiration</h2>
+    <p class="section-sub">Tag us in your photos! The best Nyumba Klasik setups get featured on our page.</p>
+  </div>
+  <div class="insta-grid">
+    <div class="insta-item insta-c1 reveal"><div class="insta-placeholder">🪟</div><div class="insta-overlay">📷</div></div>
+    <div class="insta-item insta-c2 reveal"><div class="insta-placeholder">🍳</div><div class="insta-overlay">📷</div></div>
+    <div class="insta-item insta-c3 reveal"><div class="insta-placeholder">🛏️</div><div class="insta-overlay">📷</div></div>
+    <div class="insta-item insta-c4 reveal"><div class="insta-placeholder">👟</div><div class="insta-overlay">📷</div></div>
+    <div class="insta-item insta-c5 reveal"><div class="insta-placeholder">🏠</div><div class="insta-overlay">📷</div></div>
+    <div class="insta-item insta-c6 reveal"><div class="insta-placeholder">✨</div><div class="insta-overlay">📷</div></div>
+  </div>
+  <div style="text-align:center;margin-top:32px;">
+    <a href="https://instagram.com/nyumbaklasik" class="btn-outline" style="color:var(--obsidian);border-color:var(--obsidian);" target="_blank">Follow @nyumbaklasik on Instagram →</a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-section">
+  <div class="newsletter-inner reveal">
+    <h2 class="newsletter-title">Get Exclusive Deals First</h2>
+    <p class="newsletter-sub">Join 5,000+ Tanzanians who receive our weekly offers, new arrivals, and style tips directly to their inbox.</p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Enter your email address">
+      <button class="newsletter-btn">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="42" height="42" rx="2" fill="#1a1a1a"/>
+            <path d="M8 32V10L21 21L34 10V32" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="21" cy="21" r="3" fill="#C9A84C" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">NYUMBA KLASIK</span>
+          <span class="brand-sub">Premium Home & Lifestyle</span>
+        </div>
+      </div>
+      <p class="footer-desc">Tanzania's premier home and lifestyle brand, delivering elegance, comfort, and style to families and professionals across Dar es Salaam and beyond.</p>
+      <div class="footer-social">
+        <a class="social-icon" href="#" title="Facebook">f</a>
+        <a class="social-icon" href="#" title="Instagram">📷</a>
+        <a class="social-icon" href="#" title="TikTok">🎵</a>
+        <a class="social-icon" href="#" title="WhatsApp">📱</a>
+        <a class="social-icon" href="#" title="YouTube">▶</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop All</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Blog</a></li>
+        <li><a href="#">Customer Reviews</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Our Products</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home Curtains</a></li>
+        <li><a href="#">Office Curtains</a></li>
+        <li><a href="#">Cookware Sets</a></li>
+        <li><a href="#">Kitchen Utensils</a></li>
+        <li><a href="#">Duvets & Comforters</a></li>
+        <li><a href="#">Sneakers & Gym Shoes</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item">
+        <i>📍</i>
+        <span>Dar es Salaam, Tanzania<br>Available across the city</span>
+      </div>
+      <div class="footer-contact-item">
+        <i>📱</i>
+        <span>+255 700 000 000<br>(WhatsApp & Calls)</span>
+      </div>
+      <div class="footer-contact-item">
+        <i>📧</i>
+        <span>hello@nyumbaklasik.co.tz</span>
+      </div>
+      <div class="footer-contact-item">
+        <i>🕒</i>
+        <span>Mon–Sat: 8AM – 8PM<br>Sunday: 10AM – 6PM</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 <span class="gold">NYUMBA KLASIK</span>. All rights reserved. Dar es Salaam, Tanzania.</span>
+    <div class="payment-icons">
+      <div class="payment-icon">M-Pesa</div>
+      <div class="payment-icon">Airtel</div>
+      <div class="payment-icon">Tigo</div>
+      <div class="payment-icon">VISA</div>
+      <div class="payment-icon">COD</div>
+    </div>
+  </div>
+</footer>
+
+<!-- AI CHATBOT FLOAT -->
+<div class="chatbot-float">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div class="chat-header-info">
+        <div class="chat-name">Klasik AI Assistant</div>
+        <div class="chat-status"><div class="status-dot"></div> Online — responds in Swahili & English</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg ai">👋 Karibu NYUMBA KLASIK! Mimi ni AI assistant wako. Ninaweza kukusaidia kupata bei, bidhaa, na maelezo mengine kwa Kiingereza au Kiswahili.</div>
+      <div class="msg ai">Je, ungependa kujua bei za curtains, cookware, duvets, au sneakers? Niulize! 😊</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask in English or Swahili..." onkeydown="if(event.key==='Enter') sendChat()">
+      <button class="chat-send" onclick="sendChat()">➤</button>
+    </div>
+  </div>
+  <div class="chat-bubble" onclick="toggleChat()" title="AI Sales Assistant">🤖</div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <div class="wa-tooltip">Order on WhatsApp</div>
+  <a class="wa-btn" href="https://wa.me/255700000000?text=Habari%20Nyumba%20Klasik!%20Nataka%20kuagiza%20bidhaa." target="_blank" title="Order on WhatsApp">📱</a>
+</div>
+
+<script>
+// ─── NAV SCROLL ────────────────────────────
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (!nav) return;
+  if (window.scrollY > 80) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// ─── REVEAL ON SCROLL ─────────────────────
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(r => observer.observe(r));
+
+// ─── MOBILE MENU ──────────────────────────
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ─── WHATSAPP ─────────────────────────────
+function openWhatsApp() {
+  window.open('https://wa.me/255700000000?text=Habari%20Nyumba%20Klasik!%20Nataka%20kuagiza%20bidhaa.', '_blank');
+}
+
+// ─── PRODUCT TABS ─────────────────────────
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.products-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ─── AI CHATBOT ───────────────────────────
+let chatOpen = false;
+function toggleChat() {
+  const w = document.getElementById('chatWindow');
+  chatOpen = !chatOpen;
+  if (chatOpen) w.classList.add('open');
+  else w.classList.remove('open');
+}
+
+const aiResponses = {
+  curtain: "Curtains zetu zinaanzia TZS 45,000 hadi TZS 150,000 kwa seti kamili. Tuna velvet blackout curtains, sheer panels, na office curtains za hali ya juu. Unataka bei ya curtain gani hasa? 😊",
+  cookware: "Cookware sets zetu zinaanzia TZS 85,000 (6-piece) hadi TZS 240,000 (16-piece premium). Tunao non-stick, stainless steel, na ceramic sets. Bei ya sasa: 27% OFF! 🍳",
+  duvet: "Duvets zetu zinaanzia TZS 95,000 (single) hadi TZS 200,000 (king size premium). Zote ni 300 GSM — laini na za starehe sana. Free delivery ndani ya Dar es Salaam! 🛏️",
+  sneaker: "Sneakers zetu zinaanzia TZS 65,000 hadi TZS 150,000. Tuna running shoes, gym shoes, na casual sneakers. Sizes zote zinapatikana. Unaweza kuagiza WhatsApp sasa! 👟",
+  delivery: "Tunafanya delivery ndani ya Dar es Salaam. Unapoagiza kabla ya saa 8 asubuhi, utapata bidhaa yako siku hiyo hiyo! Free delivery kwa manunuzi ya TZS 150,000+. 🚚",
+  payment: "Tunakubali: M-Pesa, Airtel Money, Tigo Pesa, VISA/Mastercard, na Cash on Delivery. Malipo ni salama kabisa! 💳",
+  whatsapp: "Unaweza kuagiza moja kwa moja WhatsApp nambari yetu: +255 700 000 000. Tutakujibu ndani ya dakika chache! 📱",
+  default: "Asante kwa swali lako! 😊 Ninaweza kukusaidia na:\n• Bei za curtains, cookware, duvets, sneakers\n• Maelezo ya delivery na payment\n• Jinsi ya kuagiza\n\nAulize swali lako au bonyeza WhatsApp tuwasiliane moja kwa moja! 🌟"
+};
+
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  const messages = document.getElementById('chatMessages');
+  const text = input.value.trim();
+  if (!text) return;
+
+  const userMsg = document.createElement('div');
+  userMsg.className = 'msg user';
+  userMsg.textContent = text;
+  messages.appendChild(userMsg);
+  input.value = '';
+
+  const typing = document.createElement('div');
+  typing.className = 'msg typing';
+  typing.textContent = 'Inaandika...';
+  messages.appendChild(typing);
+  messages.scrollTop = messages.scrollHeight;
+
+  setTimeout(() => {
+    messages.removeChild(typing);
+    const lc = text.toLowerCase();
+    let reply = aiResponses.default;
+    if (lc.includes('curtain') || lc.includes('pazia')) reply = aiResponses.curtain;
+    else if (lc.includes('cookware') || lc.includes('sufuria') || lc.includes('kitchen')) reply = aiResponses.cookware;
+    else if (lc.includes('duvet') || lc.includes('bed') || lc.includes('comforter') || lc.includes('blanketi')) reply = aiResponses.duvet;
+    else if (lc.includes('sneaker') || lc.includes('shoe') || lc.includes('kiatu')) reply = aiResponses.sneaker;
+    else if (lc.includes('deliver') || lc.includes('shipping') || lc.includes('usafirishaji')) reply = aiResponses.delivery;
+    else if (lc.includes('pay') || lc.includes('mpesa') || lc.includes('malipo') || lc.includes('lipa')) reply = aiResponses.payment;
+    else if (lc.includes('whatsapp') || lc.includes('order') || lc.includes('agiza')) reply = aiResponses.whatsapp;
+
+    const aiMsg = document.createElement('div');
+    aiMsg.className = 'msg ai';
+    aiMsg.style.whiteSpace = 'pre-line';
+    aiMsg.textContent = reply;
+    messages.appendChild(aiMsg);
+
+    const waBtn = document.createElement('button');
+    waBtn.className = 'btn-wa-small';
+    waBtn.style.cssText = 'margin-top:8px;width:100%;border-radius:6px;padding:10px;font-size:12px;';
+    waBtn.textContent = '📱 Order on WhatsApp';
+    waBtn.onclick = openWhatsApp;
+    messages.appendChild(waBtn);
+    messages.scrollTop = messages.scrollHeight;
+  }, 1000);
+}
+</script>
+
+</body>
+</html>

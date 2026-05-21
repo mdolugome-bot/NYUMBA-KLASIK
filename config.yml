@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+      - file: "site.json"
+        label: "Main Settings"
+        name: "settings"
+        fields:
+          - { name: "title", label: "Site Title", widget: "string" }
+          - { name: "description", label: "Meta Description", widget: "text" }
+          - { name: "keywords", label: "Meta Keywords", widget: "string" }
+          - { name: "email", label: "Email", widget: "string" }
+          - { name: "phone", label: "Phone", widget: "string" }
+          - { name: "whatsapp", label: "WhatsApp Number", widget: "string" }
