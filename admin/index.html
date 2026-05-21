@@ -4,9 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nyumba Klasik - Admin</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
+  <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'git-gateway',
+          branch: 'main',
+        },
+        media_folder: 'images',
+        public_folder: '/images',
+        collections: [
+          {
+            name: 'site',
+            label: 'Website Content',
+            files: [
+              {
+                file: 'site.json',
+                label: 'Main Settings',
+                name: 'settings',
+                fields: [
+                  { name: 'title', label: 'Site Title', widget: 'string' },
+                  { name: 'description', label: 'Meta Description', widget: 'text' },
+                  { name: 'keywords', label: 'Meta Keywords', widget: 'string' },
+                  { name: 'email', label: 'Email', widget: 'string' },
+                  { name: 'phone', label: 'Phone', widget: 'string' },
+                  { name: 'whatsapp', label: 'WhatsApp Number', widget: 'string' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
